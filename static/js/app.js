@@ -1,4 +1,3 @@
-```javascript
 // =====================================
 // K Wallet Frontend
 // app.js - Part 1 (Authentication)
@@ -302,8 +301,8 @@ async function adminLogin() {
     }
 
 }
-```
-```javascript
+
+
 // =====================================
 // Dashboard
 // app.js - Part 2
@@ -592,8 +591,8 @@ document.addEventListener(
     }
 
 );
-```
-```javascript id="ah4n0t"
+
+
 // =====================================
 // K Wallet
 // app.js - Part 3 (Admin Dashboard)
@@ -726,7 +725,7 @@ async function loadAdminDashboard() {
 
         // --------------------
         // Pie Chart
-        // --------------------
+        // ----------------------------
 
         const pie =
             await fetch("/admin/pie")
@@ -804,4 +803,3 @@ document.addEventListener(
     }
 
 );
-```
