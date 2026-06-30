@@ -1,0 +1,147 @@
+```html
+{% extends "base.html" %}
+
+{% block title %}
+Register | K Wallet
+{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+
+<div class="row justify-content-center">
+
+<div class="col-lg-5 col-md-7">
+
+<div class="card shadow-lg border-0 rounded-4">
+
+<div class="card-body p-5">
+
+<div class="text-center mb-4">
+
+<h1 class="text-success">
+💳
+</h1>
+
+<h2 class="fw-bold">
+
+Create Your K Wallet
+
+</h2>
+
+<p class="text-muted">
+
+Open your wallet in less than one minute.
+
+</p>
+
+</div>
+
+<div id="notification"></div>
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Full Name
+
+</label>
+
+<input
+type="text"
+class="form-control form-control-lg"
+id="username"
+placeholder="John Mwangi">
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Choose a 4-Digit PIN
+
+</label>
+
+<div class="input-group">
+
+<input
+type="password"
+class="form-control form-control-lg"
+id="pin"
+maxlength="4"
+placeholder="****">
+
+<button
+class="btn btn-outline-secondary"
+type="button"
+onclick="toggleRegisterPin()">
+
+👁
+
+</button>
+
+</div>
+
+</div>
+
+<div class="d-grid mt-4">
+
+<button
+class="btn btn-success btn-lg"
+onclick="registerUser()">
+
+Create Account
+
+</button>
+
+</div>
+
+<hr class="my-4">
+
+<div class="text-center">
+
+<p>
+
+Already have an account?
+
+</p>
+
+<a
+href="/login-page"
+class="btn btn-outline-primary">
+
+Login
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+function toggleRegisterPin(){
+
+const pin=document.getElementById("pin");
+
+pin.type=pin.type==="password"
+?
+"text"
+:
+"password";
+
+}
+
+</script>
+
+{% endblock %}
+```

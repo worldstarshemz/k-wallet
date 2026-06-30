@@ -1,0 +1,270 @@
+```html
+{% extends "base.html" %}
+
+{% block title %}
+Admin Dashboard | K Wallet
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid py-4">
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+<div>
+
+<h2 class="fw-bold">
+
+📊 K Wallet Admin Dashboard
+
+</h2>
+
+<p class="text-muted">
+
+System Monitoring & Analytics
+
+</p>
+
+</div>
+
+<a href="/logout" class="btn btn-danger">
+
+Logout
+
+</a>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="row g-4 mb-4">
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0">
+
+<div class="card-body text-center">
+
+<h6>Total Users</h6>
+
+<h2 class="text-primary" id="users">
+
+0
+
+</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0">
+
+<div class="card-body text-center">
+
+<h6>Total Transactions</h6>
+
+<h2 class="text-success" id="transactions">
+
+0
+
+</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0">
+
+<div class="card-body text-center">
+
+<h6>Total Money Sent</h6>
+
+<h2 class="text-danger">
+
+KSh
+<span id="money">
+
+0
+
+</span>
+
+</h2>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Charts -->
+
+<div class="row">
+
+<div class="col-lg-8">
+
+<div class="card shadow border-0">
+
+<div class="card-header">
+
+<h5>
+
+Daily Transactions
+
+</h5>
+
+</div>
+
+<div class="card-body">
+
+<canvas id="lineChart"></canvas>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0">
+
+<div class="card-header">
+
+<h5>
+
+Wallet Distribution
+
+</h5>
+
+</div>
+
+<div class="card-body">
+
+<canvas id="pieChart"></canvas>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Tables -->
+
+<div class="row mt-4">
+
+<div class="col-lg-6">
+
+<div class="card shadow border-0">
+
+<div class="card-header">
+
+<h5>
+
+Registered Users
+
+</h5>
+
+</div>
+
+<div class="card-body">
+
+<div class="table-responsive">
+
+<table class="table table-hover">
+
+<thead>
+
+<tr>
+
+<th>User</th>
+
+<th>Account</th>
+
+<th>Balance</th>
+
+</tr>
+
+</thead>
+
+<tbody id="usersTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-6">
+
+<div class="card shadow border-0">
+
+<div class="card-header">
+
+<h5>
+
+Recent Transactions
+
+</h5>
+
+</div>
+
+<div class="card-body">
+
+<div class="table-responsive">
+
+<table class="table table-striped">
+
+<thead>
+
+<tr>
+
+<th>From</th>
+
+<th>To</th>
+
+<th>Amount</th>
+
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody id="transactionsTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+{% endblock %}
+```

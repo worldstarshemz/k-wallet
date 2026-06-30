@@ -1,0 +1,574 @@
+```html
+{% extends "base.html" %}
+
+{% block title %}
+K Wallet | Smart Digital Payments
+{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO ================= -->
+
+<section class="container py-5">
+
+    <div class="row align-items-center">
+
+        <div class="col-lg-6">
+
+            <span class="badge bg-primary mb-3">
+                🇰🇪 Made for Kenya
+            </span>
+
+            <h1 class="display-3 fw-bold">
+
+                Pay.
+                Save.
+                Grow.
+
+            </h1>
+
+            <p class="lead mt-4">
+
+                K Wallet is a secure digital wallet that lets you
+                send money, receive payments, scan QR codes,
+                and manage your finances from anywhere.
+
+            </p>
+
+            <div class="mt-4">
+
+                <a href="/register-page"
+                   class="btn btn-primary btn-lg me-3">
+
+                    Create Account
+
+                </a>
+
+                <a href="/login-page"
+                   class="btn btn-outline-primary btn-lg">
+
+                    Login
+
+                </a>
+
+            </div>
+
+            <div class="row mt-5">
+
+                <div class="col-4">
+
+                    <h2 class="fw-bold text-primary">
+                        20K+
+                    </h2>
+
+                    <small>
+                        Users
+                    </small>
+
+                </div>
+
+                <div class="col-4">
+
+                    <h2 class="fw-bold text-success">
+                        KSh 8M+
+                    </h2>
+
+                    <small>
+                        Transactions
+                    </small>
+
+                </div>
+
+                <div class="col-4">
+
+                    <h2 class="fw-bold text-warning">
+                        99.9%
+                    </h2>
+
+                    <small>
+                        Uptime
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6 text-center">
+
+            <img
+                src="{{ url_for('static', filename='images/hero1.jpg') }}"
+                class="img-fluid rounded-4 shadow"
+                alt="K Wallet">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section class="bg-light py-5">
+
+<div class="container">
+
+<h2 class="text-center fw-bold mb-5">
+
+Why Choose K Wallet?
+
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="card h-100 shadow border-0">
+
+<div class="card-body text-center">
+
+<h1>💸</h1>
+
+<h4>
+
+Instant Transfers
+
+</h4>
+
+<p>
+
+Send money within seconds to friends,
+family and businesses.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card h-100 shadow border-0">
+
+<div class="card-body text-center">
+
+<h1>🔒</h1>
+
+<h4>
+
+Bank-Level Security
+
+</h4>
+
+<p>
+
+Your account is protected using
+modern encryption and secure login.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card h-100 shadow border-0">
+
+<div class="card-body text-center">
+
+<h1>📱</h1>
+
+<h4>
+
+QR Payments
+
+</h4>
+
+<p>
+
+Pay merchants instantly by
+scanning QR codes.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card h-100 shadow border-0">
+
+<div class="card-body text-center">
+
+<h1>⚡</h1>
+
+<h4>
+
+Fast Deposits
+
+</h4>
+
+<p>
+
+Deposit money instantly and
+start paying immediately.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card h-100 shadow border-0">
+
+<div class="card-body text-center">
+
+<h1>📊</h1>
+
+<h4>
+
+Smart Analytics
+
+</h4>
+
+<p>
+
+Track your spending,
+income and savings.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card h-100 shadow border-0">
+
+<div class="card-body text-center">
+
+<h1>🌍</h1>
+
+<h4>
+
+Anywhere Anytime
+
+</h4>
+
+<p>
+
+Access your wallet from
+any device connected
+to the internet.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+```
+```html
+<!-- ================= STATISTICS ================= -->
+
+<section class="container py-5">
+
+    <div class="row text-center">
+
+        <div class="col-md-3">
+
+            <h1 class="text-primary fw-bold">
+                20K+
+            </h1>
+
+            <p>
+                Active Users
+            </p>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <h1 class="text-success fw-bold">
+                KSh 8M+
+            </h1>
+
+            <p>
+                Payments Processed
+            </p>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <h1 class="text-warning fw-bold">
+                500+
+            </h1>
+
+            <p>
+                Merchants
+            </p>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <h1 class="text-danger fw-bold">
+                99.9%
+            </h1>
+
+            <p>
+                Reliability
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section class="bg-light py-5">
+
+<div class="container">
+
+<h2 class="text-center fw-bold mb-5">
+
+What Our Users Say
+
+</h2>
+
+<div class="row g-4">
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0">
+
+<div class="card-body text-center">
+
+<img
+src="{{ url_for('static', filename='images/user1.jpg') }}"
+class="rounded-circle mb-3"
+width="100"
+height="100">
+
+<h4>
+
+Brian Mwangi
+
+</h4>
+
+<p>
+
+"K Wallet has completely changed
+the way I send money."
+
+</p>
+
+<div class="text-warning">
+
+★★★★★
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0">
+
+<div class="card-body text-center">
+
+<img
+src="{{ url_for('static', filename='images/user2.jpg') }}"
+class="rounded-circle mb-3"
+width="100"
+height="100">
+
+<h4>
+
+Faith Achieng
+
+</h4>
+
+<p>
+
+"The QR payment feature
+is incredibly convenient."
+
+</p>
+
+<div class="text-warning">
+
+★★★★★
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="card shadow border-0">
+
+<div class="card-body text-center">
+
+<img
+src="{{ url_for('static', filename='images/user3.jpg') }}"
+class="rounded-circle mb-3"
+width="100"
+height="100">
+
+<h4>
+
+James Mutiso
+
+</h4>
+
+<p>
+
+"The best wallet app
+I've ever used."
+
+</p>
+
+<div class="text-warning">
+
+★★★★★
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<section class="py-5 text-center">
+
+<div class="container">
+
+<h2 class="fw-bold">
+
+Ready to Join K Wallet?
+
+</h2>
+
+<p class="lead">
+
+Create your free wallet in under one minute.
+
+</p>
+
+<a
+href="/register-page"
+class="btn btn-primary btn-lg mt-3">
+
+Open Your Wallet
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="bg-dark text-white py-5">
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-6">
+
+<h3>
+
+K Wallet
+
+</h3>
+
+<p>
+
+Secure Digital Payments
+Made for Kenya.
+
+</p>
+
+</div>
+
+<div class="col-md-6">
+
+<h5>
+
+Contact
+
+</h5>
+
+<p>
+
+📧 support@kwallet.co.ke
+
+</p>
+
+<p>
+
+📞 +254 700 000 000
+
+</p>
+
+<p>
+
+📍 Nairobi, Kenya
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}
+```

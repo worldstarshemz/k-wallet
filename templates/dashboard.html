@@ -1,0 +1,267 @@
+```html
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard | K Wallet
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+<div class="row">
+
+<!-- Sidebar -->
+
+<div class="col-lg-3 mb-4">
+
+<div class="card shadow border-0 rounded-4">
+
+<div class="card-body text-center">
+
+<img
+id="profile-photo"
+src="{{ url_for('static', filename='uploads/default.png') }}"
+class="rounded-circle mb-3"
+width="120"
+height="120"
+alt="Profile">
+
+<h4 id="welcome">
+Welcome
+</h4>
+
+<p class="text-muted" id="account">
+KW000001
+</p>
+
+<input
+type="file"
+class="form-control mb-3"
+id="photoInput">
+
+<button
+class="btn btn-outline-primary w-100"
+onclick="uploadPhoto()">
+
+Upload Photo
+
+</button>
+
+<hr>
+
+<a href="/logout" class="btn btn-danger w-100">
+
+Logout
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Main -->
+
+<div class="col-lg-9">
+
+<!-- Notification -->
+
+<div id="notification"></div>
+
+<!-- Wallet Cards -->
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="card shadow border-0 rounded-4">
+
+<div class="card-body">
+
+<h6 class="text-muted">
+
+Wallet Balance
+
+</h6>
+
+<h2 class="text-success">
+
+KSh
+<span id="balance">
+
+0
+
+</span>
+
+</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card shadow border-0 rounded-4">
+
+<div class="card-body">
+
+<h6 class="text-muted">
+
+Total Sent
+
+</h6>
+
+<h2 class="text-danger">
+
+KSh
+<span id="total-sent">
+
+0
+
+</span>
+
+</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card shadow border-0 rounded-4">
+
+<div class="card-body">
+
+<h6 class="text-muted">
+
+Total Received
+
+</h6>
+
+<h2 class="text-primary">
+
+KSh
+<span id="total-received">
+
+0
+
+</span>
+
+</h2>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Send Money -->
+
+<div class="card shadow border-0 rounded-4 mt-4">
+
+<div class="card-body">
+
+<h3>
+
+💸 Send Money
+
+</h3>
+
+<div class="row">
+
+<div class="col-md-6">
+
+<input
+class="form-control mb-3"
+id="receiver"
+placeholder="Receiver Account">
+
+</div>
+
+<div class="col-md-6">
+
+<input
+class="form-control mb-3"
+id="amount"
+placeholder="Amount">
+
+</div>
+
+</div>
+
+<button
+class="btn btn-success"
+onclick="sendMoney()">
+
+Send Money
+
+</button>
+
+</div>
+
+</div>
+
+<!-- QR -->
+
+<div class="card shadow border-0 rounded-4 mt-4">
+
+<div class="card-body text-center">
+
+<h3>
+
+Your QR Code
+
+</h3>
+
+<img
+id="user-qr"
+src="/qr"
+width="220"
+class="img-fluid">
+
+</div>
+
+</div>
+
+<!-- Transactions -->
+
+<div class="card shadow border-0 rounded-4 mt-4">
+
+<div class="card-body">
+
+<h3>
+
+Recent Transactions
+
+</h3>
+
+<div id="history">
+
+<p class="text-muted">
+
+No transactions yet.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
+```

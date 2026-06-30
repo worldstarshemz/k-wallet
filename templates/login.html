@@ -1,0 +1,146 @@
+```html
+{% extends "base.html" %}
+
+{% block title %}
+Login | K Wallet
+{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+
+<div class="row justify-content-center">
+
+<div class="col-lg-5 col-md-7">
+
+<div class="card shadow-lg border-0 rounded-4">
+
+<div class="card-body p-5">
+
+<div class="text-center mb-4">
+
+<h1 class="text-primary">
+💙
+</h1>
+
+<h2 class="fw-bold">
+
+Welcome Back
+
+</h2>
+
+<p class="text-muted">
+
+Login to your K Wallet account
+
+</p>
+
+</div>
+
+<div id="notification"></div>
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Account Number
+
+</label>
+
+<input
+type="text"
+class="form-control form-control-lg"
+id="loginAccount"
+placeholder="KW000001">
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+
+PIN
+
+</label>
+
+<div class="input-group">
+
+<input
+type="password"
+class="form-control form-control-lg"
+id="loginPin"
+placeholder="Enter PIN">
+
+<button
+class="btn btn-outline-secondary"
+type="button"
+onclick="togglePin()">
+
+👁
+
+</button>
+
+</div>
+
+</div>
+
+<div class="d-grid mt-4">
+
+<button
+class="btn btn-primary btn-lg"
+onclick="loginUser()">
+
+Login
+
+</button>
+
+</div>
+
+<hr class="my-4">
+
+<div class="text-center">
+
+<p>
+
+Don't have an account?
+
+</p>
+
+<a
+href="/register-page"
+class="btn btn-outline-primary">
+
+Create Account
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+function togglePin(){
+
+const pin=document.getElementById("loginPin");
+
+pin.type=pin.type==="password"
+?
+"text"
+:
+"password";
+
+}
+
+</script>
+
+{% endblock %}
+```
