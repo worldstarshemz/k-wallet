@@ -111,3 +111,32 @@ class Admin(db.Model):
     def check_password(self, password):
         """Verify admin password"""
         return check_password_hash(self.password, password)
+
+
+# ==========================
+# M-Pesa Models
+# ==========================
+
+class MpesaTransaction(db.Model):
+    """Records STK Push requests and results"""
+    __tablename__ = "mpesa_transactions"
+
+    id = db.Column(db.Integer, primary_key=True)
+    merchant_request_id = db.Column(db.String(100), nullable=True)
+    checkout_request_id = db.Column(db.String(100), nullable=True, index=True)
+    amount = db.Column(db.Float, nullable=False)
+    phone_number = db.Column(db.String(20), nullable=False)
+    result_code = db.Column(db.Integer, nullable=True)
+    result_desc = db.Column(db.String(255), nullable=True)
+    status = db.Column(db.String(30), default="pending")
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+
+class MpesaWebhookLog(db.Model):
+    """Raw webhook payloads from Daraja for auditing"""
+    __tablename__ = "mpesa_webhook_logs"
+
+    id = db.Column(db.Integer, primary_key=True)
+    payload = db.Column(db.Text, nullable=True)
+    headers = db.Column(db.Text, nullable=True)
+    received_at = db.Column(db.DateTime, default=datetime.utcnow)
