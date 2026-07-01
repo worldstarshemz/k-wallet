@@ -252,6 +252,8 @@ async function adminLogin() {
                 "Content-Type": "application/json"
             },
 
+            credentials: "same-origin",
+
             body: JSON.stringify({
 
                 username,
@@ -261,37 +263,36 @@ async function adminLogin() {
 
         });
 
-        const data = await response.json();
+        const contentType = response.headers.get("content-type") || "";
+        let data = null;
 
-        if (response.ok) {
-
-            showNotification(
-                "Admin Login Successful"
-            );
-
-            setTimeout(() => {
-
-                window.location.href =
-                    "/admin";
-
-            }, 1000);
-
+        if (contentType.includes("application/json")) {
+            data = await response.json();
+        } else {
+            const text = await response.text();
+            console.error("admin-login returned non-JSON response:", {
+                status: response.status,
+                headers: Object.fromEntries(response.headers.entries()),
+                body: text
+            });
+            showNotification("Server error (non-JSON response). Check server logs.", "danger");
+            return;
         }
 
-        else {
-
-            showNotification(
-                data.error,
-                "danger"
-            );
-
+        if (response.ok) {
+            showNotification("Admin Login Successful");
+            setTimeout(() => {
+                window.location.href = "/admin";
+            }, 1000);
+        } else {
+            showNotification(data && data.error ? data.error : "Login failed", "danger");
         }
 
     }
 
     catch (err) {
 
-        console.error(err);
+        console.error("adminLogin network/parse error:", err);
 
         showNotification(
             "Server error",
