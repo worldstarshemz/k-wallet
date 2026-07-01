@@ -6,28 +6,33 @@ from models import db
 from routes.auth import auth_bp
 from routes.wallet import wallet_bp
 from routes.admin import admin_bp
+from routes.mpesa import mpesa_bp
+from flask_migrate import Migrate
 
 
 def create_app():
     """Application factory"""
     app = Flask(__name__)
-    
+
     # Load configuration
     app.config.from_object(Config)
-    
+
     # Initialize extensions
     db.init_app(app)
+    migrate = Migrate()
+    migrate.init_app(app, db)
     CORS(app)
-    
+
     # Register blueprints
     app.register_blueprint(auth_bp)
     app.register_blueprint(wallet_bp)
     app.register_blueprint(admin_bp)
-    
-    # Create database tables
+    app.register_blueprint(mpesa_bp)
+
+    # Create database tables (safe fallback for simple dev)
     with app.app_context():
         db.create_all()
-    
+
     return app
 
 
